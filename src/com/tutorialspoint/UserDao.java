@@ -15,13 +15,17 @@ public class UserDao {
 	public List<User> getAllUsers(){ 
 	      
 	      List<User> userList = null; 
-	      String basePath = System.getProperty("user.dir");
+	      
 	      try { 
-	         File file = new File(basePath  + "/src/Users.dat"); 
+	         File file = new File("C:/temp/Users.dat"); 
 	         if (!file.exists()) { 
 	            User user = new User(1, "Mahesh", "Teacher"); 
+	            User user2 = new User(2,"Chad","Ogle");
+	            User user3 = new User(3,"Ashley","McCoy");
 	            userList = new ArrayList<User>(); 
 	            userList.add(user); 
+	            userList.add(user2); 
+	            userList.add(user3); 
 	            saveUserList(userList); 
 	         } 
 	         else{ 
@@ -40,7 +44,7 @@ public class UserDao {
 	   private void saveUserList(List<User> userList){ 
 		   String basePath = System.getProperty("user.dir");
 	      try { 
-	         File file = new File(basePath  + "/src/Users.dat"); 
+	    	  File file = new File("C:/temp/Users.dat"); 
 	         FileOutputStream fos;  
 	         fos = new FileOutputStream(file); 
 	         ObjectOutputStream oos = new ObjectOutputStream(fos); 
